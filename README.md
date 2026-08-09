@@ -1,10 +1,8 @@
 # Year-11-Software-Engineering-Task-2
 
 ### Project Name: DNR: The Golden Age of War
-**Student: ** Demas Al-Khameesi
-**Teacher: ** Mr McFarlane
-
----
+Student: D.A
+Teacher: Mr M
 
 ### Project Vision
 This project translates strategic thinking, character progression, and RPG style combat into an Object-Oriented Programming (OOP) framework in Python. 
