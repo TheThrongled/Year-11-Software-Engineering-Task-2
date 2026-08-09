@@ -15,6 +15,22 @@ This project translates strategic thinking, character progression, and RPG style
 ### How to run
 Get python and install the tcod library (eg. in terminal type "pip3 install tcod"), then in terminal do python3 main.py (in same folder as where you downloaded it)
 
+Controls:
+* Move - WASD
+* Inventory - I
+* In inventory:
+*   Go to left item - ,
+*   Go to right item - .
+* Other controls are explained in game.
+
+* Bumping/walking into enemies makes you deal a hit to them and them deal a hit to you.
+* Kill all wolves to trigger new wave.
+
+* Go to T to get basic weapon
+* Go to & to process materials
+
+* Consume wolf soul in order to regain essence and health
+
 
 ---
 
