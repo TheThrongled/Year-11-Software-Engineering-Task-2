@@ -128,7 +128,7 @@ class WolfKing(Actor):
 
 class Warrior(Actor):
     def __init__(self, x, y, name, entities_list=None):
-        super().__init__(x, y, str(name), (200, 200, 200), f"Warrior {name}", 9999, entities_list, f"Warrior {name}: Stand firm!")
+        super().__init__(x, y, str(name), (200, 200, 200), f"Warrior {name}", 9999, entities_list, f"Stand firm!")
         self.target = None
 
 
