@@ -13,7 +13,7 @@ This project translates strategic thinking, character progression, and RPG style
 * **Progression**: After defeating enemies using a combination of exploration and combat, there will be pills to consume and get stronger.
 
 ### How to run
-Get python and tcod, then in terminal do python3 main.py (in same folder as where you downloaded it)
+Get python and install the tcod library (eg. in terminal type "pip3 install tcod"), then in terminal do python3 main.py (in same folder as where you downloaded it)
 
 
 ---
