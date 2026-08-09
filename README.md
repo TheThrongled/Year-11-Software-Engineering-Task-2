@@ -12,6 +12,10 @@ This project translates strategic thinking, character progression, and RPG style
 * **Strategic Combat**: Enemies have various waves and the player's abilities are centred around the dismantling of enemies waves. They may kill the player and as the player gets more strength he must continually get the furthest.
 * **Progression**: After defeating enemies using a combination of exploration and combat, there will be pills to consume and get stronger.
 
+### How to run
+Get python and tcod, then in terminal do python3 main.py (in same folder as where you downloaded it)
+
+
 ---
 
 ## NESA Academic Integrity Declaration
