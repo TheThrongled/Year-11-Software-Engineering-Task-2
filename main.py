@@ -361,7 +361,7 @@ class GameMap:
                     elif isinstance(wolf, GreatWolf):
                         base_bite = 8
                     else:
-                    base_bite = 2
+                        base_bite = 2
 
                     
                     if wolf.target == self.player:
