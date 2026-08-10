@@ -116,13 +116,13 @@ class Wolf(Actor):
 class GreatWolf(Wolf):
     def __init__(self, x, y, entities_list=None):
         # Massive 'W', more health (50 HP), hits for 5 DMG
-        Actor.__init__(self, x, y, "W", (255, 100, 100), "Great Wolf", 50, entities_list, "GROOOAR!")
+        Actor.__init__(self, x, y, "W", (255, 100, 100), "Great Wolf", 80, entities_list, "GROOOAR!")
         self.target = None
 
 class WolfKing(Wolf):
     def __init__(self, x, y, entities_list=None):
         # Boss 'K', supreme health (100 HP), hits for 5 DMG
-        Actor.__init__(self, x, y, "K", (255, 215, 0), "Wolf King", 100, entities_list, "AWOOOOO!")
+        Actor.__init__(self, x, y, "K", (255, 215, 0), "Wolf King", 250, entities_list, "AWOOOOO!")
         self.target = None
 
 
@@ -317,6 +317,12 @@ class GameMap:
         wolves = [e for e in self.entities if isinstance(e, Wolf)]
         warriors = [e for e in self.entities if isinstance(e, Warrior)]
 
+        if any(isinstance(e, WolfKing) for e in self.entities) and turn_counter > 0 and turn_counter % 30 == 0:
+            for _ in range(2):
+                # Spawn near the boss
+                GreatWolf(x=random.randint(5, 15), y=random.randint(5, 15), entities_list=self.entities)
+            active_dialogue = "THE WOLF KING SUMMONS ELITE GUARDS!"
+        
         for warrior in warriors:
             if not warrior.target or warrior.target not in self.entities:
                 if wolves:
@@ -350,7 +356,13 @@ class GameMap:
                 
                 if abs(wolf.x - wolf.target.x) <= 1 and abs(wolf.y - wolf.target.y) <= 1:
                     # FIXED: Wolf bosses strike for higher baseline values
-                    base_bite = 5 if isinstance(wolf, (GreatWolf, WolfKing)) else 2
+                    if isinstance(wolf, WolfKing):
+                        base_bite = 15
+                    elif isinstance(wolf, GreatWolf):
+                        base_bite = 8
+                    else:
+                    base_bite = 2
+
                     
                     if wolf.target == self.player:
                         
@@ -395,6 +407,8 @@ def main() -> None:
     map_width = 80
     map_height = 21
 
+    turn_counter = 0
+    
     header_height = 1
     hud_height = 5
     screen_height = map_height + header_height + hud_height
@@ -653,7 +667,9 @@ def main() -> None:
                     # 4. RESOLVE GAME ENGINE TICKS
                     if moved:
                         current_area = game_map.check_tile_triggers(current_area, current_area.legend_dict[' '])
-                        game_map.process_ai_turns()
+                        game_map.process_ai_turns(turn_counter)
+
+                        turn_counter += 1
 
 
 if __name__ == "__main__":
