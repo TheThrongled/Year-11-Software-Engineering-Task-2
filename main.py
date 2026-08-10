@@ -116,13 +116,13 @@ class Wolf(Actor):
 class GreatWolf(Wolf):
     def __init__(self, x, y, entities_list=None):
         # Massive 'W', more health (50 HP), hits for 5 DMG
-        Actor.__init__(x, y, "W", (255, 100, 100), "Great Wolf", 50, entities_list, "GROOOAR!")
+        Actor.__init__(self, x, y, "W", (255, 100, 100), "Great Wolf", 50, entities_list, "GROOOAR!")
         self.target = None
 
 class WolfKing(Wolf):
     def __init__(self, x, y, entities_list=None):
         # Boss 'K', supreme health (100 HP), hits for 5 DMG
-        Actor.__init__(x, y, "K", (255, 215, 0), "Wolf King", 100, entities_list, "AWOOOOO!")
+        Actor.__init__(self, x, y, "K", (255, 215, 0), "Wolf King", 100, entities_list, "AWOOOOO!")
         self.target = None
 
 
