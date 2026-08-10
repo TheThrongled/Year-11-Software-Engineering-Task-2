@@ -311,7 +311,7 @@ class GameMap:
             wk.target = self.player
             active_dialogue = "THE WOLF KING HAS AWOKEN! STAND FIRM!"
 
-    def process_ai_turns(self):
+    def process_ai_turns(self, turn_counter):
         import random
         global active_dialogue
         wolves = [e for e in self.entities if isinstance(e, Wolf)]
